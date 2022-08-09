@@ -114,29 +114,29 @@ ret
 
 INIT:           MOV  A,  #38H                         ;2 lineas, matriz
                                                       ;de 5 x 7
-                ACALL delay_5ms                          ;espera a que LCD estÈ libre
+                ACALL delay_5ms                          ;espera a que LCD est√© libre
                 CLR  RS                               ;prepara comando para salida
-                ACALL CARGA_DATOS                          ;envÌalo
+                ACALL CARGA_DATOS                          ;env√≠alo
                 
                 MOV A, #0EH                           ;LCD encendida, cursor encendido
                 ACALL delay_5ms                          ;espera a que la LCD este libre
                 CLR RS                                ;prepara comando para salida
-                ACALL CARGA_DATOS                          ;envÌalo
+                ACALL CARGA_DATOS                          ;env√≠alo
                
 NUEVO:          MOV A,  #01H                          ;limpia LCD
                 ACALL delay_5ms                          ; espera a que el LCD este libre
                 CLR RS                                ;perpara comando para salida
-                ACALL CARGA_DATOS                          ;envÌalo
+                ACALL CARGA_DATOS                          ;env√≠alo
 				
 				MOV A,  #02H                          ;poscicion inicial
                 ACALL delay_5ms                          ;espera a que el LCD este libre
                 CLR RS                                ;perpara comando para salida
-                ACALL CARGA_DATOS                          ;envÌalo
+                ACALL CARGA_DATOS                          ;env√≠alo
                 
                 MOV A,  #80H                          ;cursor: linea 1, pos. 1
                 ACALL delay_5ms                          ;espera a que LCD este libre
                 CLR RS                                ;prepara comando de salida
-                ACALL CARGA_DATOS                          ;envÌalo
+                ACALL CARGA_DATOS                          ;env√≠alo
                 
                 RET
                 
@@ -144,7 +144,7 @@ NUEVO:          MOV A,  #01H                          ;limpia LCD
 
 PRINT:      ACALL delay_5ms                          ;espera a que la LCD este libre
                SETB RS                               ;prepara dato para salida
-               ACALL CARGA_DATOS                          ;envÌalo
+               ACALL CARGA_DATOS                          ;env√≠alo
                RET
                
 
@@ -260,7 +260,7 @@ INIT_TIMER0:
 	orl TCON,#00010000B;// FINALLY TIMER 0 GOES TO RUN 
 RET	
 ISR_TIMER0_0VRFLW:
-      MOV TH0,#00111100B//EL TIMER EMPEZAR¡ LA CUENTA SOLO EN CERO
+      MOV TH0,#00111100B//EL TIMER EMPEZAR√Å LA CUENTA SOLO EN CERO
 	  MOV TL0,#10101111B//COSA QUE NO DESEAMOS 
 	  INC cntr1Seg
 	  MOV A,cntr1Seg
